@@ -38,7 +38,7 @@
                     {{- .Title | markdownify }}
                     {{- if (.Param "reposted") }}<sup><span
                         class="pe-entry-reposted">&nbsp;&nbsp;[转载]</span></sup>{{- end }}
-                    {{- if .Draft }}<sup><span class="x-entry-draft">&nbsp;&nbsp;[草稿]</span></sup>{{- end }}
+                    {{- if .Draft }}<sup><span class="pe-entry-draft">&nbsp;&nbsp;[草稿]</span></sup>{{- end }}
                 </h3>
                 <div class="archive-meta">
                     {{- partial "post_meta.html" . -}}

@@ -1,10 +1,10 @@
 .archive-posts {
     width: 100%;
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .archive-year {
-    margin-top: 40px;
+    margin-top: 4rem;
 }
 
 .archive-year:not(:last-of-type) {
@@ -14,12 +14,12 @@
 .archive-month {
     display: flex;
     align-items: flex-start;
-    padding: 10px 0;
+    padding: 1rem 0;
 }
 
 .archive-month-header {
-    margin: 25px 0;
-    width: 200px;
+    margin: 2.5rem 0;
+    width: 10rem;
 }
 
 .archive-month:not(:last-of-type) {
@@ -28,8 +28,8 @@
 
 .archive-entry {
     position: relative;
-    padding: 5px;
-    margin: 10px 0;
+    padding: .5rem 1rem;
+    margin: 1rem 0;
 }
 
 .archive-entry:hover {
@@ -50,5 +50,5 @@
 .archive-count,
 .archive-meta {
     color: var(--secondary);
-    font-size: 14px;
+    font-size: 1.4rem;
 }

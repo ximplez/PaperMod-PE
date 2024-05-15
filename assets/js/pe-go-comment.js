@@ -1,7 +1,6 @@
-let comment = document.getElementById("pe-comments");
-let bottomToComment = document.getElementById("comments-link")
-
 document.addEventListener('scroll', function () {
+    const comment = document.getElementById("pe-comments");
+    const bottomToComment = document.getElementById("comments-link")
     const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
     const offsetTop = comment.offsetTop
     const scrollTop = document.documentElement.scrollTop

@@ -222,36 +222,3 @@ a:hover {
 #comments-link {
     bottom: 14rem;
 }
-
-
-@keyframes pe-bottom-jump {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-1.0rem);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.pe-bottom-jump {
-    animation: pe-bottom-jump 0.5s ease;
-}
-
-@keyframes pe-top-jump {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(1rem);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.pe-top-jump {
-    animation: pe-top-jump 0.5s ease;
-}

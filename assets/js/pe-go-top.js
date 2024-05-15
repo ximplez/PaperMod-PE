@@ -8,8 +8,8 @@ if (menu) {
     }
 }
 
-const goTopButton = document.getElementById("top-link");
 window.onscroll = function () {
+    const goTopButton = document.getElementById("top-link");
     if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
         goTopButton.style.visibility = "visible";
         goTopButton.style.opacity = "1";
@@ -25,19 +25,5 @@ document.addEventListener('scroll', function (e) {
     const clientHeight = document.documentElement.clientHeight;
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-    const progress = ((scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100).toFixed(0);
-    readProgress.innerText = progress;
-
-    if (progress === "100") {
-        document.body.classList.add("pe-bottom-jump");
-        setTimeout(function () {
-            document.body.classList.remove("pe-bottom-jump");
-        }, 500);
-    }
-    if (scrollTop === 0) {
-        document.body.classList.add("pe-top-jump");
-        setTimeout(function () {
-            document.body.classList.remove("pe-top-jump");
-        }, 500);
-    }
+    readProgress.innerText = ((scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100).toFixed(0);
 })

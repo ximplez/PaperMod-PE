@@ -9,14 +9,11 @@ for (let element of peDetails) {
     }
 }
 
-
-
-
 // 链接跳转
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
-        var id = this.getAttribute("href").substr(1);
+        const id = this.getAttribute("href").substr(1);
         if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
                 behavior: "smooth"

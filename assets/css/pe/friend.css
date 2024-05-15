@@ -51,7 +51,7 @@
 }
 
 
-.friend-div:hover .pe-friend-logo {
+.pe-friend:hover .pe-friend-logo {
     transition: 0.9s !important;
     -webkit-transition: 0.9s !important;
     -moz-transition: 0.9s !important;

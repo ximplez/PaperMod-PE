@@ -86,7 +86,7 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     overflow-x: auto;
-    word-break: keep-all;
+    word-break: normal;
 }
 
 button,

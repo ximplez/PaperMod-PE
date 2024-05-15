@@ -63,20 +63,21 @@ theme: PaperMod-PE
 
 ### 样式
 
-- 🔵 代码块
+- 🟢 代码块
 
 ### 功能
 
-- 🔵 giscus (评论)
-- 🔵 Mermaid
-- 🔵 LaTex
+- 🟢 giscus (评论)
+- 🟢 Mermaid
+- 🟢 KaTex
+- 🟢 MathJax
 - 🟢 赞赏
 - 🟢 Fancybox 灯箱
 
 ### shortcode
 
-- 🔵 admonition
-- 🔵 hl
+- 🟢 admonition
+- 🟢 hl
 
 ### 自定义页面
 

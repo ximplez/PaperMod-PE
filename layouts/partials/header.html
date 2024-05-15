@@ -1,5 +1,5 @@
 {{- /* theme-toggle is enabled */}}
-{{- if (or (not site.Params.disableThemeToggle) (not site.Params.disableThemeToggleFloat)) }}
+{{- if (or (not site.Params.disableThemeToggle) (site.Params.enableThemeToggleFloat)) }}
 {{- /* theme is light */}}
 {{- if (eq site.Params.defaultTheme "light") }}
 <script>

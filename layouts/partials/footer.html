@@ -22,7 +22,7 @@
 </footer>
 {{- end }}
 
-{{- if (not site.Params.disableScrollToTop) }}
+{{- if (.Param "enableScrollToTop") }}
 <a href="#top" class="pe-float-btn" id="top-link">
     <span id="pe-read-progress"></span>
 </a>

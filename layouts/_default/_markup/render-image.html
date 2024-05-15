@@ -1,4 +1,4 @@
-{{- if not .Page.Site.Params.disableFancybox -}}
+{{- if .Page.Site.Params.enableFancybox -}}
 <div class="pe-fancybox">
     <a data-fancybox="gallery" href="{{ .Destination | safeURL }}">
         <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />

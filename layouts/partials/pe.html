@@ -43,7 +43,7 @@
 
 
 <!-- go top js -->
-{{ if .Param "disableScrollToTop" }}
+{{ if .Param "enableScrollToTop" }}
 {{ $PeJSSlice = $PeJSSlice | append (resources.Get "js/pe-go-top.js") }}
 {{ end }}
 

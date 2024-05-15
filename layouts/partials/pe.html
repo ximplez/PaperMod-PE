@@ -43,13 +43,14 @@
 
 
 <!-- go top js -->
+{{ if .Param "disableScrollToTop" }}
 {{ $PeJSSlice = $PeJSSlice | append (resources.Get "js/pe-go-top.js") }}
-
-<!-- go comment js -->
-{{ $PeJSSlice = $PeJSSlice | append (resources.Get "js/pe-go-comment.js") }}
+{{ end }}
 
 <!-- theme toggle js -->
+{{ if .Param "enableThemeToggleFloat" }}
 {{ $PeJSSlice = $PeJSSlice | append (resources.Get "js/pe-theme-toggle.js") }}
+{{ end }}
 
 <!-- PaperMod-PE JavaScript -->
 {{ $PeJS := $PeJSSlice | resources.Concat "assets/js/pe.js" | resources.Minify }}

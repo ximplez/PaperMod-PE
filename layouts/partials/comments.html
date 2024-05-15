@@ -5,6 +5,10 @@
     <p class="pe-comments-subtitle">{{- .Param "discussionSubtitle" }} </p>
 </div>
 <div id="pe-comments"></div>
+{{ if .Param "enableScrollToComment" }}
+{{ $script := resources.Get "js/pe-go-comment.js" | minify | fingerprint}}
+<script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{ end }}
 <script>
     const getStoredTheme = () => localStorage.getItem("pref-theme") === "dark" ? "{{ .Site.Params.giscus.darkTheme }}" : "{{ .Site.Params.giscus.lightTheme }}";
     const setGiscusTheme = () => {

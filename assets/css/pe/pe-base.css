@@ -8,6 +8,8 @@
     --toc-width: 30rem;
 
     --pe-primary-hover-color: #e26c56;
+    /* 主题色 (background) */
+    --pe-btn-bg-color: #223051;
     /* 按钮字体颜色 */
     --pe-btn-font-color: #fff;
     /* 文章标识 - 置顶 */

@@ -32,6 +32,14 @@
     margin: 8px;
     padding: 6px;
     transition: transform 0.1s;
+    background-color: var(--pe-btn-bg-color);
+    color: var(--pe-btn-font-color);
+}
+
+.button:hover {
+    transition: 0.15s;
+    color: var(--pe-btn-font-color);
+    background-color: var(--pe-primary-hover-color);
 }
 
 .button-inner {

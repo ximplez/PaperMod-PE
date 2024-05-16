@@ -31,7 +31,15 @@
         {{- end }}
         {{- end }}
         <h1>{{ .title | default site.Title | markdownify }}</h1>
-        <span>{{ .subtitle | markdownify }}</span>
+        <span id="pe-subtitle">{{ .subtitle | markdownify }}</span>
+        {{ if site.Params.enableTypeIt }}
+        <script>
+            new TypeIt("#pe-subtitle", {
+                speed: 50,
+                waitUntilVisible: true,
+            }).go();
+        </script>
+        {{ end }}
         {{- partial "social_icons.html" -}}
 
         {{- with .buttons }}

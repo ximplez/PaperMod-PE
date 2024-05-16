@@ -76,12 +76,12 @@
 
 <!-- KaTex -->
 {{ $mathematicsRenderer := upper (.Param "mathematicsRenderer") }}
-{{ if eq $mathematicsRenderer "KATEX" }}
+{{ if and (.Param "enableMath") (eq $mathematicsRenderer "KATEX") }}
 {{ partialCached "katex.html" . }}
 {{ end }}
 
 <!-- MathJax -->
-{{ if eq $mathematicsRenderer "MATHJAX" }}
+{{ if and (.Param "enableMath") (eq $mathematicsRenderer "MATHJAX") }}
 {{ partialCached "mathjax.html" . }}
 {{ end }}
 
@@ -91,4 +91,9 @@
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true });
 </script>
+{{ end }}
+
+<!-- TypeIt -->
+{{ if and (.Param "enableTypeIt") (.IsHome) }}
+<script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 {{ end }}

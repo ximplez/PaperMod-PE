@@ -15,7 +15,7 @@
 }
 
 .pagination a {
-    color: var(--theme);
+    color: var(--pe-btn-font-color);
     font-size: 13px;
     line-height: 36px;
     background-color: var(--pe-btn-bg-color);

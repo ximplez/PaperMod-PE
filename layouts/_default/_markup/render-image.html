@@ -1,10 +1,10 @@
 {{- if .Page.Site.Params.enableFancybox -}}
 <div class="pe-fancybox">
     <a data-fancybox="gallery" href="{{ .Destination | safeURL }}">
-        <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
+        <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" />
     </a>
 </div>
 {{- else -}}
-<img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
+<img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" />
 {{- end -}}
 {{ .Page.Store.Set "hasImages" true }}

@@ -1,4 +1,4 @@
-<h1 align=center>PaperMod PE | <a href="https://tofuwine.github.io/" rel="nofollow">Demo</a></h1>
+<h1 align=center>PaperMod PE | <a href="https://tofuwine.github.io/PaperMod-PE-Demo/" rel="nofollow">Demo</a></h1>
 
 <br>
 
@@ -37,6 +37,10 @@ git submodule add --depth=1 https://github.com/tofuwine/PaperMod-PE.git themes/P
 ```yaml
 theme: PaperMod-PE
 ```
+
+## 文档
+
+点击前往：[PaperMod-PE Documents](https://www.tofuwine.cn/series/papermod-pe/)
 
 ## 变更说明
 

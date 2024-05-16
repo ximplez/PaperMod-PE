@@ -18,9 +18,15 @@
     color: var(--theme);
     font-size: 13px;
     line-height: 36px;
-    background: var(--primary);
+    background-color: var(--pe-btn-bg-color);
     border-radius: calc(36px / 2);
     padding: 0 16px;
+}
+
+.pagination a:hover {
+    transition: 0.15s;
+    color: var(--pe-btn-font-color);
+    background-color: var(--pe-primary-hover-color);
 }
 
 .pagination .next {

@@ -98,3 +98,9 @@
 {{ if and (.Param "enableTypeIt") (.IsHome) }}
 <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 {{ end }}
+
+<!-- Cloudflare Web Analytics -->
+{{ if site.Params.enableCloudflareWebAnalytics }}
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ site.Params.CloudflareWebAnalyticsToken }}"}'></script>
+{{ end }}
+<!-- End Cloudflare Web Analytics -->

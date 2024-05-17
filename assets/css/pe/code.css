@@ -59,11 +59,6 @@
     color: var(--pe-code-block-color);
 }
 
-
-.pe-code-copy-button:hover {
-    color: var(--pe-primary-hover-color);
-}
-
 .pe-icon {
     width: 1.6rem;
     height: 1.6rem;
@@ -142,7 +137,6 @@
     content: "\f105";
 }
 
-
 .pe-code-details.open .fa-chevron-right:before {
     content: "\f107";
 }
@@ -161,4 +155,8 @@
 
 .pe-code-details.open .pe-code-copy-button {
     display: inherit;
+}
+
+.pe-code-copy-button:hover {
+    color: var(--pe-primary-hover-color);
 }

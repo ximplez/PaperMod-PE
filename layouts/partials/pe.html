@@ -28,6 +28,7 @@
 <!-- 赞赏 -->
 {{ if .Param "enableReward" }}
 {{ $PeCSSSlice = $PeCSSSlice | append (resources.Get "css/pe/reward.css") }}
+{{ $PeJSSlice = $PeJSSlice | append (resources.Get "js/pe-reward.js") }}
 {{ end }}
 
 <!-- PaperMod-PE CSS -->

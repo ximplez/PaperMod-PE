@@ -6,6 +6,28 @@
     border-radius: 3px;
     margin: 2rem 1.5rem;
 }
+
+.dark .pe-git {
+    border: 1px solid rgb(88, 88, 88);
+}
+
+.pe-git-platform-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.gitee .pe-git-platform-icon {
+    fill: #C71D23;
+}
+
+.dark .pe-git-platform-icon {
+    fill: #e6edf3;
+}
+
+.dark .gitee .pe-git-platform-icon {
+    fill: rgba(199, 29, 35, .9);
+}
+
 .pe-git-info {
     display: flex;
     flex-direction: column;
@@ -59,6 +81,8 @@
     gap: .5rem;
 }
 
-.pe-git-count-icon {
-    color: #636c76;
+.pe-git-count-item-icon {
+    fill: #999999;
+    width: 1.6rem;
+    height: 1.6rem;
 }

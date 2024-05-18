@@ -35,6 +35,16 @@
 {{- if site.Params.analytics.naver.SiteVerificationTag }}
 <meta name="naver-site-verification" content="{{ site.Params.analytics.naver.SiteVerificationTag }}">
 {{- end }}
+<!-- Baidu site verification -->
+{{ if site.Params.analytics.baidu.SiteVerificationTag }}
+<meta name="baidu-site-verification" content="{{ site.Params.analytics.baidu.SiteVerificationTag }}" />
+{{ end }}
+<!-- Cloudflare Web Analytics -->
+{{ if site.Params.analytics.cloudflare.WebAnalyticsToken }}
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ site.Params.analytics.cloudflare.WebAnalyticsToken }}"}'></script>
+{{ end }}
+<!-- End Cloudflare Web Analytics -->
+
 
 {{- /* Styles */}}
 

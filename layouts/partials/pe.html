@@ -20,27 +20,12 @@
 {{ end }}
 
 
-<!-- Shortcode-->
-<!-- 使用 .HasShortcode 方法判断后，无法正确 append -->
-<!-- ShortCode: admonition -->
-{{ $PeCSSSlice = $PeCSSSlice | append (resources.Get "css/pe/admonition.css") }}
-
 <!-- 赞赏 -->
 {{ if .Param "enableReward" }}
 {{ $PeCSSSlice = $PeCSSSlice | append (resources.Get "css/pe/reward.css") }}
 {{ end }}
 
-<!-- PaperMod-PE CSS -->
-{{ $PeCSS := $PeCSSSlice | resources.Concat "assets/css/pe.css" | resources.Minify }}
-{{ if not site.Params.assets.disableFingerprinting }}
-{{ $PeCSS := $PeCSS | fingerprint }}
-<link crossorigin="anonymous" href="{{ $PeCSS.RelPermalink }}" integrity="{{ $PeCSS.Data.Integrity }}" rel="preload stylesheet" as="style">
-{{ else }}
-<link crossorigin="anonymous" href="{{ $PeCSS.RelPermalink }}" rel="preload stylesheet" as="style">
-{{ end }}
-
 {{ $PeJSSlice = $PeJSSlice | append (resources.Get "js/pe-code.js") }}
-
 
 <!-- go top js -->
 {{ if .Param "enableScrollToTop" }}
@@ -52,6 +37,25 @@
 {{ $PeJSSlice = $PeJSSlice | append (resources.Get "js/pe-theme-toggle.js") }}
 {{ end }}
 
+<!-- Shortcode-->
+
+<!-- 使用 .HasShortcode 方法判断后，无法正确 append -->
+<!-- ShortCode: admonition -->
+{{ $PeCSSSlice = $PeCSSSlice | append (resources.Get "css/pe/admonition.css") }}
+
+<!-- Shortcode: git -->
+{{ $PeCSSSlice = $PeCSSSlice | append (resources.Get "css/pe/sc-git.css") }}
+{{ $PeJSSlice = $PeJSSlice | append (resources.Get "js/pe-sc-git.js") }}
+
+
+<!-- PaperMod-PE CSS -->
+{{ $PeCSS := $PeCSSSlice | resources.Concat "assets/css/pe.css" | resources.Minify }}
+{{ if not site.Params.assets.disableFingerprinting }}
+{{ $PeCSS := $PeCSS | fingerprint }}
+<link crossorigin="anonymous" href="{{ $PeCSS.RelPermalink }}" integrity="{{ $PeCSS.Data.Integrity }}" rel="preload stylesheet" as="style">
+{{ else }}
+<link crossorigin="anonymous" href="{{ $PeCSS.RelPermalink }}" rel="preload stylesheet" as="style">
+{{ end }}
 <!-- PaperMod-PE JavaScript -->
 {{ $PeJS := $PeJSSlice | resources.Concat "assets/js/pe.js" | resources.Minify }}
 {{ if not site.Params.assets.disableFingerprinting }}
@@ -96,15 +100,4 @@
 <!-- TypeIt -->
 {{ if and (.Param "enableTypeIt") (.IsHome) }}
 <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-{{ end }}
-
-<!-- Cloudflare Web Analytics -->
-{{ if site.Params.analytics.cloudflare.WebAnalyticsToken }}
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ site.Params.analytics.cloudflare.WebAnalyticsToken }}"}'></script>
-{{ end }}
-<!-- End Cloudflare Web Analytics -->
-
-<!-- Baidu site verification -->
-{{ if site.Params.analytics.baidu.SiteVerificationTag }}
-<meta name="baidu-site-verification" content="{{ site.Params.analytics.baidu.SiteVerificationTag }}" />
 {{ end }}

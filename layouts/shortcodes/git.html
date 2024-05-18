@@ -1,0 +1,23 @@
+{{- $platform := .Get "platform" -}}
+{{- $repo := .Get "repo" -}}
+
+{{ $url := (printf "%s%s" "https://github.com/" $repo) }}
+
+{{ if eq $platform "gitee" }}
+    {{ $url = (printf "%s%s" "https://gitee.com/" $repo) }}
+{{ end }}
+
+
+<div class="pe-git {{ $platform }}">
+    <span class="pe-git-platform"></span>
+    <div class="pe-git-info">
+        <div class="pe-git-repo-name">
+            <a href="{{ $url }}" target="_blank" rel="noopener noreferrer me">{{ $repo }}</a>
+        </div>
+        <div class="pe-git-description"></div>
+        <div class="pe-git-extend">
+            <span class="pe-git-language"></span>
+            <div class="pe-git-count"></div>
+        </div>
+    </div>
+</div>

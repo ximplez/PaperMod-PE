@@ -1,10 +1,15 @@
+.pe-archive {
+    padding-top: 2rem;
+}
+
 .archive-posts {
     width: 100%;
     font-size: 1.6rem;
 }
 
 .archive-year {
-    margin-top: 4rem;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .archive-year:not(:last-of-type) {

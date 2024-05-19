@@ -38,11 +38,11 @@
     font-size: 1.8rem;
     color: #3478CD;
     text-decoration: none;
-    box-shadow: none;
 }
 
 .pe-git-repo-name a:hover {
     box-shadow: 0 1px var(--pe-primary-hover-color);
+    color: var(--pe-primary-hover-color);
 }
 
 .pe-git-description {

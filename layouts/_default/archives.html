@@ -17,17 +17,17 @@
 {{- $pages = site.RegularPages }}
 {{- end }}
 <div class="pe-archive">
-    {{- range $pages.GroupByPublishDate "2006" }}
+    {{- range $index,$element := ($pages.GroupByPublishDate "2006") }}
     {{- if ne .Key "0001" }}
-    <div class="archive-year pe-details">
+    <div class="archive-year pe-details {{ if eq $index 0 }}open{{ end }}">
         <h2 class="archive-year-header pe-details-summary">
-            {{- replace .Key "0001" "" }}年<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup>
+            {{- replace .Key "0001" "" }} 年<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup>
         </h2>
         <div class="pe-details-content">
             {{- range .Pages.GroupByDate "1" }}
             <div class="archive-month">
                 <h3 class="archive-month-header">
-                    {{- .Key }}月
+                    {{- .Key }} 月
                     <sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}
                     </sup>
                 </h3>

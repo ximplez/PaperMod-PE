@@ -56,39 +56,6 @@ theme: PaperMod-PE
 - 16px = 1.6rem
 
 
-## 待办事项
-
-状态说明:
-🟢 完成
-🟠 测试
-🟣 开发
-🔵 待办
-⚫ 弃用
-
-### 样式
-
-- 🟢 代码块
-
-### 功能
-
-- 🟢 giscus (评论)
-- 🟢 Mermaid
-- 🟢 KaTex
-- 🟢 MathJax
-- 🟢 赞赏
-- 🟢 Fancybox 灯箱
-
-### shortcode
-
-- 🟢 admonition
-- 🟢 hl
-
-### 自定义页面
-
-- 🟢 关于
-- 🟢 最新文章
-- 🟢 友链
-
 ## FAQ
 
 ### 主题更新

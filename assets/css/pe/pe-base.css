@@ -80,15 +80,6 @@
     color: var(--pe-btn-font-color);
 }
 
-/* 文本高亮 */
-.pe-text-highlight {
-    background-color: yellow;
-}
-
-.dark .pe-text-highlight {
-    color: rgb(51, 51, 51);
-}
-
 /* 折叠 */
 
 .pe-details .pe-details-summary:hover {

@@ -1,18 +1,22 @@
-{{- $platform := .Get "platform" -}}
-{{- $repo := .Get "repo" -}}
+{{ $platform := "" }}
+{{ $repo := "" }}
 
-{{ $url := (printf "%s%s" "https://github.com/" $repo) }}
-
-{{ if eq $platform "gitee" }}
-    {{ $url = (printf "%s%s" "https://gitee.com/" $repo) }}
+{{ if .IsNamedParams }}
+    {{- $platform = .Get "platform" -}}
+    {{- $repo = .Get "repo" -}}
+{{ else }}
+    {{ $url := .Get 0 }}
+    {{ $regex := `^https?://(?:[a-z0-9.-]+\.)*([a-z0-9.-]+)\.[a-z]{2,}/(.*)` }}
+    {{ $matches := findRESubmatch $regex $url }}
+    {{ $platform = index (index $matches 0) 1 }}
+    {{ $repo = index (index $matches 0) 2 }}
 {{ end }}
-
 
 <div class="pe-git {{ $platform }}">
     <span class="pe-git-platform"></span>
     <div class="pe-git-info">
         <div class="pe-git-repo-name">
-            <a href="{{ $url }}" target="_blank" rel="noopener noreferrer me">{{ $repo }}</a>
+            {{ $repo }}
         </div>
         <div class="pe-git-description"></div>
         <div class="pe-git-extend">

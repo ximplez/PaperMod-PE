@@ -5,6 +5,7 @@
     padding: 1rem;
     border-radius: 3px;
     margin: 2rem 1.5rem;
+    transition: .5s;
 }
 
 .dark .pe-git {
@@ -85,4 +86,8 @@
     fill: #999999;
     width: 1.6rem;
     height: 1.6rem;
+}
+
+.pe-git-error {
+    color: #ff1744;
 }

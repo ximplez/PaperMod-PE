@@ -1,6 +1,7 @@
 import * as params from '@params';
 
 let fuse; // holds our search engine
+let resWrap = document.getElementsByClassName('pe-search-result-wrap')[0];
 let resList = document.getElementById('searchResults');
 let sInput = document.getElementById('searchInput');
 let first, last, current_elem = null
@@ -69,6 +70,7 @@ function activeToggle(ae) {
 function reset() {
     resultsAvailable = false;
     resList.innerHTML = sInput.value = ''; // clear inputbox and searchResults
+    resWrap.classList.remove('show');
     sInput.focus(); // shift focus to input box
 }
 
@@ -93,12 +95,14 @@ sInput.onkeyup = function (e) {
             }
 
             resList.innerHTML = resultSet;
+            resWrap.classList.add('show');
             resultsAvailable = true;
             first = resList.firstChild;
             last = resList.lastChild;
         } else {
             resultsAvailable = false;
             resList.innerHTML = '';
+            resWrap.classList.remove('show');
         }
     }
 }

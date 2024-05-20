@@ -18,7 +18,9 @@
 <div id="searchBox">
     <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf " %s ↵" .Title) }}"
     aria-label="search" type="search" autocomplete="off">
-    <ul id="searchResults" aria-label="search results"></ul>
+    <div class="pe-search-result-wrap">
+        <ul id="searchResults" aria-label="search results"></ul>
+    </div>
 </div>
 
 {{- if not (.Param "hideSeries")}}

@@ -44,7 +44,7 @@
 }
 
 .post-entry:hover {
-    transform: translateY(-1rem);
+    transform: translateY(-.5rem);
     box-shadow: 0 1.6rem 2rem -1.4rem rgb(65 66 68 / 50%);
 }
 

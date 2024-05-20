@@ -29,8 +29,15 @@
             {{- end }}
         </h2>
     </header>
+    {{- if (ne (.Param "hideSummary") true) }}
     <div class="entry-content">
+        {{ $summary := .Summary }}
+        {{- if (.Param "reposted") }}
+        {{ $summary = (printf "[转载] %s —— %s" (.Param "repostedTitle") (.Param "repostedAuthor")) }}
+        {{ end }}
+        <p>{{ $summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
     </div>
+    {{- end }}
     <footer class="entry-footer">
         {{- partial "post_meta.html" . -}}
     </footer>

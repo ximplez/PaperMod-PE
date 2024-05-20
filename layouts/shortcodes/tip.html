@@ -1,0 +1,20 @@
+{{ $inner := .Inner | .Page.RenderString }}
+{{ $type := .Get 0 | default "" }}
+{{ $inline := .Get 1 | eq "inline" }}
+
+{{ if ($type | eq "inline") }}
+    {{ $type = "" }}
+    {{ $inline = true }}
+{{ end }}
+
+{{- $class := (printf "%s %s" "pe-tip" $type) -}}
+
+{{ if $inline }}
+<span class="{{ $class }}">
+    {{ $inner }}
+</span>
+{{ else }}
+<div class="{{ $class }}">
+    {{ $inner }}
+</div>
+{{ end }}

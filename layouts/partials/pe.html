@@ -11,6 +11,8 @@
 
 {{ $PeCSSSlice = $PeCSSSlice | append (resources.Get "css/pe/code.css") }}
 
+{{ $PeCSSSlice = $PeCSSSlice | append (resources.Get "css/pe/tip.css") }}
+
 {{ if .Param "enableCopyright" }}
 {{ $PeCSSSlice = $PeCSSSlice | append (resources.Get "css/pe/copyright.css") }}
 {{ end }}

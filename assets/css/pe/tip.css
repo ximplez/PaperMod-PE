@@ -1,0 +1,26 @@
+.pe-tip {
+    background-color: #f0f8ff; /* 浅蓝色背景，代表清新、新奇 */
+    border-left: .5rem solid #007bff; /* 左侧蓝色边框，突出重点 */
+    color: #333; /* 深色文字，确保对比度 */
+    padding: .5rem 1rem; /* 内边距，增加阅读舒适度 */
+    margin-bottom: 1rem; /* 底部外边距，分隔不同内容 */
+    border-radius: .5rem; /* 圆角，提升视觉效果 */
+}
+
+.dark .pe-tip {
+    background-color: #343a40; /* 深灰背景，适应暗黑主题 */
+    border-left: 5px solid #00bc8c; /* 明亮的青绿色边框，突出而不刺眼 */
+    color: #ffffff; /* 白色文字，保证高对比度 */
+}
+
+.pe-tip.warning {
+    background-color: #fffbe6; /* 浅黄色背景 */
+    border-left: 5px solid #f7ca18; /* 明亮的黄色边框 */
+    color: #333; /* 深色文字，确保对比度 */
+}
+
+.dark .pe-tip.warning {
+    background-color: #3b3b3b; /* 深灰色背景，适应暗黑主题 */
+    border-left: 5px solid #ffa000; /* 较深的橙色边框，在暗背景下突出 */
+    color: #ffffff; /* 白色文字，保证高对比度 */
+}

@@ -3,9 +3,9 @@
 /***********************************/
 
 :root {
-    --nav-width: 138rem;
+    --nav-width: 160rem;
     --article-width: 65rem;
-    --toc-width: 30rem;
+    --toc-width: 32rem;
 
     --pe-primary-hover-color: #e26c56;
     /* 主题色 (background) */
@@ -207,4 +207,12 @@ a:hover {
 
 #pe-read-progress {
     width: max-content;
+}
+
+.header {
+    position: fixed;
+    top: 0; /* 设置导航栏位于屏幕顶部 */
+    width: 100%; /* 让导航栏横跨屏幕全宽 */
+    z-index: 1000; /* 确保导航栏在其他内容之上 */
+    background-color: inherit; /* 你可以自定义背景颜色 */
 }

@@ -99,13 +99,13 @@
     position: absolute;
     height: 100%;
     left: calc((var(--toc-width) + var(--gap)) * -0.92);
-    top: calc(var(--gap) * 1);
+    top: calc(var(--gap) + var(--header-height));
     width: var(--toc-width);
 }
 
 .wide .toc {
     position: sticky;
-    top: var(--gap);
+    top: calc(var(--gap) * 2 + var(--header-height));
     border: unset;
     background: unset;
     border-radius: unset;

@@ -216,3 +216,8 @@ a:hover {
     z-index: 1000; /* 确保导航栏在其他内容之上 */
     background-color: inherit; /* 你可以自定义背景颜色 */
 }
+
+html {
+    scroll-padding-top: var(--header-height);
+    scroll-behavior: smooth;
+}

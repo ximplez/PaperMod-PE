@@ -1,12 +1,10 @@
 {{- define "main" }}
 {{- $paginator := .Paginate .Pages }}
 
-{{ $css := resources.Get "css/pe/moment.css" | minify | fingerprint }}
+{{ $css := resources.Get "css/pe/moments.css" | minify | fingerprint }}
 <link crossorigin="anonymous" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" rel="preload stylesheet" as="style">
 
 {{ $dateformat := .Params.DateFormat }}
-
-{{ $moment := resources.Get "/img/moments.png" }}
 
 <article class="post-single">
     <header class="page-header">

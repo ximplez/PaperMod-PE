@@ -1,5 +1,9 @@
 {{- define "main" }}
 
+{{ $css := resources.Get "css/pe/posts.css" | minify | fingerprint }}
+<link crossorigin="anonymous" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" rel="preload stylesheet" as="style">
+
+
 <header class="page-header">
     <h1>{{ .Title }}</h1>
 </header>

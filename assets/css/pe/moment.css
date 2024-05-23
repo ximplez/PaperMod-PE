@@ -1,0 +1,100 @@
+.list {
+    background: #ffffff;
+}
+
+.page-header {
+    margin: 0 auto var(--content-gap);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pe-moment {
+    padding: 2rem 0;
+    gap: .8rem;
+    align-items: flex-start;
+    display: flex;
+    border-bottom: 1px;
+}
+
+.pe-moments li {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.pe-moments img {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    margin: 0;
+}
+
+.pe-moments ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pe-moment-body {
+    margin-left: 2.4rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.pe-moment-content {
+    margin-bottom: 1.6rem;
+}
+
+.pe-moment-tag {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    font-size: 0.875em;
+    line-height: 1;
+    color: #999999; /* 暗色字体 */
+    background-color: #f0f0f0; /* 浅色背景 */
+    border-radius: 0.5rem;
+}
+
+.dark .pe-moment-tag {
+    background-color: #333; /* 暗色背景 */
+}
+
+.pe-moment-bottom {
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.pe-moment-time {
+    display: inline-block;
+    color: #999999;
+}
+
+.pe-moment-comment-btn svg {
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    vertical-align: 0.15em;
+    fill: var(--pe-btn-font-color);;
+}
+
+.pe-moment-comment-btn {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    background: var(--tertiary);
+    border-radius: .5rem;
+    padding: .2rem 1rem;
+}
+
+.pe-moment-comment-btn:hover {
+    background-color: var(--pe-primary-hover-color);
+    border-radius: .5rem;
+}
+
+.pe-moment-comment {
+    margin-top: .2rem;
+}
+
+.page-footer {
+    margin-top: 2rem;
+}

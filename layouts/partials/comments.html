@@ -29,6 +29,7 @@
             "data-category": "{{ .Site.Params.giscus.category }}",
             "data-category-id": "{{ .Site.Params.giscus.categoryId }}",
             "data-mapping": "{{ .Site.Params.giscus.mapping | default "pathname" }}",
+            "data-term": {{ printf "posts/%s" (.Param "slug") }},
             "data-strict": "{{ .Site.Params.giscus.strict | default "0" }}",
             "data-reactions-enabled": "{{ .Site.Params.giscus.reactionsEnabled | default "1" }}",
             "data-emit-metadata": "{{ .Site.Params.giscus.emitMetadata | default "0" }}",
@@ -39,6 +40,8 @@
             "crossorigin": "anonymous",
             "async": "",
         };
+
+        console.log(giscusAttributes["data-term"]);
 
         // 动态创建 giscus script
         const giscusScript = document.createElement("script");

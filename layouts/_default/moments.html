@@ -1,0 +1,144 @@
+{{- define "main" }}
+{{- $paginator := .Paginate .Pages }}
+
+{{ $css := resources.Get "css/pe/moment.css" | minify | fingerprint }}
+<link crossorigin="anonymous" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" rel="preload stylesheet" as="style">
+
+{{ $dateformat := .Params.DateFormat }}
+
+{{ $moment := resources.Get "/img/moments.png" }}
+
+<article class="post-single">
+    <header class="page-header">
+        <h1>
+            {{- (printf "%s&nbsp;" .Title ) | htmlUnescape -}}
+        </h1>
+        {{- if .Description }}
+        <div class="post-description">
+            {{ .Description }}
+        </div>
+        {{- end }}
+    </header>
+
+    <div class="post-content">
+        <div class="pe-moments">
+            <ul>
+                {{- range $moment := $paginator.Pages }}
+                {{- if .Content }}
+                <li class="pe-moment">
+                    <img src="{{ site.Params.label.icon }}" alt="{{ site.Params.author }}">
+                    <div class="pe-moment-body">
+                        <div class="pe-moment-content">
+                            {{ .Content }}
+                        </div>
+                        <div class="pe-moment-tags">
+                            {{- range $index, $tag := (.Params.tags) }}
+                            <span class="pe-moment-tag">{{ $tag }}</span>
+                            {{- end }}
+                        </div>
+                        <div class="pe-moment-bottom">
+                            <div class="pe-moment-time">
+                                <span>{{ $moment.Param "date" | time.Format (default site.Params.DateFormat $dateformat) }}</span>
+                            </div>
+                            <button class="pe-moment-comment-btn" onclick="showComment(this)" data-slug="{{ $moment.Param "slug" }}">
+                                <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M281.535354 387.361616c-31.806061 0-57.664646 26.763636-57.664647 59.733333 0 32.969697 25.858586 59.733333 57.664647 59.733334s57.664646-26.763636 57.664646-59.733334c0-33.09899-25.858586-59.733333-57.664646-59.733333z m230.529292 0c-31.806061 0-57.664646 26.763636-57.664646 59.733333 0 32.969697 25.729293 59.733333 57.664646 59.733334 31.806061 0 57.535354-26.763636 57.535354-59.733334 0-33.09899-25.858586-59.733333-57.535354-59.733333z m230.4 0c-31.806061 0-57.664646 26.763636-57.664646 59.733333 0 32.969697 25.858586 59.733333 57.664646 59.733334s57.664646-26.763636 57.664647-59.733334c-0.129293-33.09899-25.858586-59.733333-57.664647-59.733333z m115.2-270.222222H166.335354c-63.612121 0-115.2 53.527273-115.2 119.59596v390.981818c0 65.939394 52.751515 126.836364 117.785858 126.836363h175.579798c30.513131 32.581818 157.220202 149.979798 157.220202 149.979798 5.559596 5.818182 14.739394 5.818182 20.29899 0 0 0 92.832323-91.410101 153.212121-149.979798h179.717172c65.034343 0 117.785859-60.89697 117.785859-126.836363V236.606061c0.129293-65.939394-51.458586-119.466667-115.070708-119.466667z m57.535354 510.577778c0 32.969697-27.668687 67.620202-60.250505 67.620202H678.335354c-21.462626 0-40.727273 21.979798-40.727273 21.979798l-124.121212 114.941414-124.121212-114.941414s-23.660606-21.979798-43.830303-21.979798H168.921212c-32.581818 0-60.250505-34.650505-60.250505-67.620202V236.606061c0-32.969697 25.729293-59.733333 57.664647-59.733334h691.329292c31.806061 0 57.535354 26.763636 57.535354 59.733334v391.111111z m0 0"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                {{ end }}
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+
+</article>
+
+{{- if gt $paginator.TotalPages 1 }}
+<footer class="page-footer">
+    <nav class="pagination">
+        {{- if $paginator.HasPrev }}
+        <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">
+            {{ i18n "prev_page" }}
+            {{- if (.Param "ShowPageNums") }}
+            {{- sub $paginator.PageNumber 1 }}/{{ $paginator.TotalPages }}
+            {{- end }}
+        </a>
+        {{- end }}
+        {{- if $paginator.HasNext }}
+        <a class="next" href="{{ $paginator.Next.URL | absURL }}">
+            {{- i18n "next_page" }}
+            {{- if (.Param "ShowPageNums") }}
+            {{- add 1 $paginator.PageNumber }}/{{ $paginator.TotalPages }}
+            {{- end }}
+        </a>
+        {{- end }}
+    </nav>
+</footer>
+{{- end }}
+
+<script>
+    const getStoredTheme = () => localStorage.getItem("pref-theme") === "dark" ? "{{ .Site.Params.giscus.darkTheme }}" : "{{ .Site.Params.giscus.lightTheme }}";
+    const setGiscusTheme = () => {
+        const sendMessage = (message) => {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (iframe) {
+                iframe.contentWindow.postMessage({giscus: message}, 'https://giscus.app');
+            }
+        }
+        sendMessage({setConfig: {theme: getStoredTheme()}})
+    }
+    function showComment(element) {
+        const slug = element.getAttribute('data-slug');
+        const commentElement = document.getElementById(slug);
+        if (commentElement) {
+            commentElement.remove();
+            return;
+        }
+        const comments = document.getElementsByClassName("pe-moment-comment");
+        if (comments) {
+            for (let comment of comments) {
+                comment.remove();
+            }
+        }
+        const momentBody = element.closest('.pe-moment-body');
+        let giscusAttributes = {
+            "src": "https://giscus.app/client.js",
+            "data-repo": "{{ .Site.Params.giscus.repo }}",
+            "data-repo-id": "{{ .Site.Params.giscus.repoId }}",
+            "data-category": "{{ .Site.Params.giscus.category }}",
+            "data-category-id": "{{ .Site.Params.giscus.categoryId }}",
+            "data-mapping": "{{ .Site.Params.giscus.mapping | default "pathname" }}",
+            "data-term": "moments/" + slug,
+            "data-strict": "{{ .Site.Params.giscus.strict | default "0" }}",
+            "data-reactions-enabled": "{{ .Site.Params.giscus.reactionsEnabled | default "1" }}",
+            "data-emit-metadata": "{{ .Site.Params.giscus.emitMetadata | default "0" }}",
+            "data-input-position": "{{ .Site.Params.giscus.inputPosition | default "bottom" }}",
+            "data-theme": getStoredTheme(),
+            "data-lang": "{{ .Site.Params.giscus.lang | default "en" }}",
+            "crossorigin": "anonymous",
+            "async": "",
+        };
+        const commentDiv = document.createElement('div');
+        commentDiv.id = slug;
+        commentDiv.className = "pe-moment-comment";
+        // 动态创建 giscus script
+        let giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(
+            ([key, value]) => giscusScript.setAttribute(key, value));
+        commentDiv.appendChild(giscusScript);
+        momentBody.appendChild(commentDiv);
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        // 页面主题变更后，变更 giscus 主题
+        const themeSwitcher = document.querySelector("#theme-toggle");
+        if (themeSwitcher) {
+            themeSwitcher.addEventListener("click", setGiscusTheme);
+        }
+        const themeFloatSwitcher = document.querySelector("#theme-toggle-float");
+        if (themeFloatSwitcher) {
+            themeFloatSwitcher.addEventListener("click", setGiscusTheme);
+        }
+    });
+</script>
+{{- end }}{{/* end main */}}

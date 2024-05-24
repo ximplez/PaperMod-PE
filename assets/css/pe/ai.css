@@ -1,0 +1,58 @@
+/* Default (light theme) styles */
+.pe-ai-content {
+    border: 1px solid #e0e0e0;
+    border-radius: .8rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 .4rem .8rem rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.pe-ai-bottom {
+    display: flex;
+    align-items: center;
+    margin-top: 1.2rem;
+    justify-content: flex-end;
+    gap: .5rem;
+    border-top: 1px solid #d6d6d6;
+    padding-top: 1.2rem;
+}
+
+.pe-ai-icon {
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: var(--pe-primary);
+    padding: .4rem .8rem;
+    border-radius: .4rem;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.pe-ai-label {
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: bold;
+    right: 0;
+}
+
+.pe-ai-text {
+    font-size: 1.6rem;
+    color: #333;
+}
+
+/* Dark theme styles */
+.dark .pe-ai-content {
+    border: 1px solid #555;
+    background-color: #333;
+    color: #ddd;
+}
+
+.dark .pe-ai-label {
+    color: #ccc;
+}
+
+.dark .pe-ai-text {
+    color: #ddd;
+}

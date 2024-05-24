@@ -10,8 +10,8 @@
 {{ $PeJSSlice := slice (resources.Get "js/pe-base.js") }}
 
 {{ $PeCSSSlice = $PeCSSSlice | append (resources.Get "css/pe/code.css") }}
-
 {{ $PeCSSSlice = $PeCSSSlice | append (resources.Get "css/pe/tip.css") }}
+{{ $PeCSSSlice = $PeCSSSlice | append (resources.Get "css/pe/ai.css") }}
 
 {{ if .Param "enableCopyright" }}
 {{ $PeCSSSlice = $PeCSSSlice | append (resources.Get "css/pe/copyright.css") }}

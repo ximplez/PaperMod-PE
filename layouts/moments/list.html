@@ -14,7 +14,6 @@
         <div class="pe-moments">
             <ul>
                 {{- range $moment := $paginator.Pages }}
-                {{ debug.Dump .Permalink }}
                 {{- if .Content }}
                 <li class="pe-moment">
                     <img src="{{ site.Params.label.icon }}" alt="{{ site.Params.author }}">

@@ -51,6 +51,16 @@
 
   {{- if .Content }}
   <div class="post-content">
+    {{ if .Param "showExpireTip" }}
+    {{ $threshold := (.Param "expireTipThreshold" | default 30) }}
+    {{ $diff := div (sub now.Unix .Lastmod.Unix) 86400 }}
+    {{ if gt $diff $threshold }}
+    <div class="pe-tip warning">
+      <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>
+      本文最后更新于&nbsp;{{ $diff }}&nbsp;天前，文中内容可能已经过时，请谨慎使用。
+    </div>
+    {{ end }}
+    {{ end }}
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}

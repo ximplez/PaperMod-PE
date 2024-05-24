@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-function getGitRepoInfoWithCache(repo, cacheTimeInSeconds=3600) {
+function getGitRepoInfoWithCache(repo, cacheTimeInSeconds=86400) {
     const cacheEntry = localStorage.getItem(repo.cacheKey);
     if (cacheEntry) {
         const { data, timestamp } = JSON.parse(cacheEntry);

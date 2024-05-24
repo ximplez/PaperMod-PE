@@ -16,7 +16,9 @@
                 {{- range $moment := $paginator.Pages }}
                 {{- if .Content }}
                 <li class="pe-moment">
-                    <img src="{{ site.Params.label.icon }}" alt="{{ site.Params.author }}">
+                    <div class="pe-moment-header">
+                        <img src="{{ site.Params.label.icon }}" alt="{{ site.Params.author }}">
+                    </div>
                     <div class="pe-moment-body">
                         <div class="pe-moment-content">
                             {{ .Content }}

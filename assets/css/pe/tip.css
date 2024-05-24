@@ -16,11 +16,15 @@
 .pe-tip.warning {
     background-color: #fffbe6; /* 浅黄色背景 */
     border-left: 5px solid #f7ca18; /* 明亮的黄色边框 */
-    color: #333; /* 深色文字，确保对比度 */
+    color: grey; /* 深色文字，确保对比度 */
+}
+
+.pe-tip.warning i.icon {
+    color: #f7ca18;
 }
 
 .dark .pe-tip.warning {
     background-color: #3b3b3b; /* 深灰色背景，适应暗黑主题 */
     border-left: 5px solid #ffa000; /* 较深的橙色边框，在暗背景下突出 */
-    color: #ffffff; /* 白色文字，保证高对比度 */
+    color: #b4b5b6cc; /* 白色文字，保证高对比度 */
 }

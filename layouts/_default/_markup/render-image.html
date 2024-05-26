@@ -1,7 +1,7 @@
 {{- if .Page.Site.Params.enableFancybox -}}
 <div class="pe-fancybox">
     <a data-fancybox="gallery" href="{{ .Destination | safeURL }}">
-        <img src="{{ .Destination | safeURL }}#center" alt="{{ .Text }}" width="600px"/>
+        <img src="{{ .Destination | safeURL }}#center" alt="{{ .Text }}" width="600px" onerror="this.onerror=null;this.src='/placeholder.svg';this.className='pe-image-placeholder'"/>
     </a>
 </div>
 {{- else -}}

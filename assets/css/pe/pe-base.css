@@ -223,3 +223,9 @@ html {
     scroll-padding-top: var(--header-height);
     scroll-behavior: smooth;
 }
+
+.pe-image-placeholder {
+    width: 30rem;
+    height: 20rem;
+    margin: 1rem auto !important;
+}

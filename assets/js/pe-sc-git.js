@@ -21,7 +21,6 @@ function getGitRepoInfoWithCache(repo, cacheTimeInSeconds=86400) {
         const { data, timestamp } = JSON.parse(cacheEntry);
         const diff = (new Date().getTime() - timestamp) / 1000;
         if (diff < cacheTimeInSeconds) {
-            console.log(`Get repo from cache: ${data}`)
             return data;
         }
     }

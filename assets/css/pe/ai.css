@@ -56,3 +56,13 @@
 .dark .pe-ai-text {
     color: #ddd;
 }
+
+@media screen and (max-width: 568px) {
+    .pe-ai-content {
+        padding: 1rem;
+    }
+    .pe-ai-bottom {
+        margin-top: .6rem;
+        padding-top: .6rem;
+    }
+}

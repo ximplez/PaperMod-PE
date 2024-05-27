@@ -107,3 +107,9 @@ img.pe-moment-profile {
 .page-footer {
     margin-top: 2rem;
 }
+
+@media screen and (max-width: 568px) {
+    img.pe-moment-profile {
+        width: 4rem;
+    }
+}

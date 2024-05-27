@@ -150,3 +150,15 @@
     height: 100%;
     display: inline-block;
 }
+
+@media screen and (max-width: 568px) {
+    .pe-reward-qr-wrap {
+        max-width: 40rem;
+        height: 20rem;
+        margin: 20rem auto;
+    }
+
+    .pe-reward-img {
+        margin: 3rem;
+    }
+}

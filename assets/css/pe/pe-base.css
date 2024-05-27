@@ -229,3 +229,18 @@ html {
     height: 20rem;
     margin: 1rem auto !important;
 }
+
+@media screen and (max-width: 568px) {
+    .pe-image-placeholder {
+        width: 15rem;
+        height: 20rem;
+    }
+
+    .post-content img {
+        max-width: 30rem;
+    }
+
+    .post-content img[src*="#center"] {
+        max-width: 30rem;
+    }
+}

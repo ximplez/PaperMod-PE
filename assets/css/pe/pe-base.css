@@ -230,6 +230,10 @@ html {
     margin: 1rem auto !important;
 }
 
+.gist {
+    margin: var(--content-gap) 0;
+}
+
 @media screen and (max-width: 568px) {
     .pe-image-placeholder {
         width: 15rem;

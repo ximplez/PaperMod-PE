@@ -1,6 +1,7 @@
 {{- $lang := .Type | default "text" }}
 {{- $title := .Attributes.title | default "" }}
 {{- $u_lang := .Attributes.lang | default ""  }}
+{{- $hideLang := .Attributes.hide | default false  }}
 
 {{- if and (.Attributes.force) (ne $u_lang "")  }}
 {{- $lang = $u_lang }}
@@ -11,11 +12,13 @@
     <div class="pe-code-block-header pe-code-details-summary">
         <div class="pe-code-block-header-left">
             <i class="arrow fas fa-chevron-right fa-fw pe-icon" aria-hidden="true"></i>
+            {{ if not $hideLang }}
             <span>
             {{- if ne $u_lang "" }}
             {{- $u_lang -}}
             {{- else }}{{- $lang -}}{{- end }}
             </span>
+            {{ end }}
         </div>
         <div class="pe-code-block-header-center">
             <span>

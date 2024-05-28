@@ -44,7 +44,11 @@ const main = parseInt(getComputedStyle(document.body).getPropertyValue('--articl
 const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
 const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
 
-function checkTocPosition(tocContainer) {
+function checkTocPosition(tocContainer=null) {
+    tocContainer = tocContainer ?? document.getElementById("toc-container");
+    if (!tocContainer) {
+        return;
+    }
     const width = document.body.scrollWidth;
 
     if (width - main - (toc * 2) - (gap * 4) > 0) {

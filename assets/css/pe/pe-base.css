@@ -225,8 +225,8 @@ html {
 }
 
 .pe-image-placeholder {
-    width: 30rem;
-    height: 20rem;
+    width: 15rem;
+    height: 10rem;
     margin: 1rem auto !important;
 }
 
@@ -235,11 +235,6 @@ html {
 }
 
 @media screen and (max-width: 568px) {
-    .pe-image-placeholder {
-        width: 15rem;
-        height: 20rem;
-    }
-
     .post-content img {
         max-width: 30rem;
     }

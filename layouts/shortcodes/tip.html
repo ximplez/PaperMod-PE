@@ -10,7 +10,7 @@
 {{- $class := (printf "%s %s" "pe-tip" $type) -}}
 
 {{ if $inline }}
-<span class="{{ $class }}">
+<span class="{{ $class }} inline">
     {{ $inner }}
 </span>
 {{ else }}

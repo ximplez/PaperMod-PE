@@ -7,6 +7,10 @@
     border-radius: .5rem; /* 圆角，提升视觉效果 */
 }
 
+.pe-tip.inline {
+    margin-right: .5rem;
+}
+
 .dark .pe-tip {
     background-color: #343a40; /* 深灰背景，适应暗黑主题 */
     border-left: 5px solid #00bc8c; /* 明亮的青绿色边框，突出而不刺眼 */

@@ -15,12 +15,11 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-function getGitRepoInfoWithCache(repo, cacheTimeInSeconds=86400) {
+function getGitRepoInfoWithCache(repo) {
     const cacheEntry = localStorage.getItem(repo.cacheKey);
     if (cacheEntry) {
         const { data, timestamp } = JSON.parse(cacheEntry);
-        const diff = (new Date().getTime() - timestamp) / 1000;
-        if (diff < cacheTimeInSeconds) {
+        if (new Date().getTime() < timestamp) {
             return data;
         }
     }
@@ -44,7 +43,7 @@ function getGitRepoInfoWithCache(repo, cacheTimeInSeconds=86400) {
                 description: res[repo.dataField.description],
                 openIssues: res[repo.dataField.openIssues],
             }
-            localStorage.setItem(repo.cacheKey, JSON.stringify({data, timestamp: new Date().getTime()}));
+            localStorage.setItem(repo.cacheKey, JSON.stringify({data, timestamp: new Date(new Date().getTime() + 24 * 60 * 60 * 1000).getTime()}));
             return data;
         });
 }

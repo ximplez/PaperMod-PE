@@ -33,6 +33,19 @@ img.pe-moment-profile {
     border-radius: 50%;
 }
 
+img.pe-moment-profile:hover {
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -ms-transition: 1s;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+}
+
 .dark .pe-moment-profile {
     background: #d6d6d6;
 }
@@ -113,3 +126,15 @@ img.pe-moment-profile {
         width: 4rem;
     }
 }
+
+.pe-stamp {
+    position: absolute;
+    right: 3rem;
+    transform: translateY(-1rem);
+}
+
+.pe-stamp-icon {
+    width: 8rem;
+    height: 8rem;
+}
+

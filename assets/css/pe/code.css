@@ -82,10 +82,36 @@
     background: var(--pe-scrollbar-hover-bg-color);
 }
 
+.pe-code-details-content::-webkit-scrollbar {
+    width: 1rem;
+}
+
+.pe-code-details-content::-webkit-scrollbar-track {
+    background: var(--pe-code-block-bg-color); /* Background of the scrollbar track */
+    border-bottom-left-radius: var(--radius);
+}
+
+.pe-code-details-content::-webkit-scrollbar-thumb {
+    border: .2rem solid var(--pe-code-block-bg-color);
+    background: var(--pe-scrollbar-bg-color);
+}
+
+.pe-code-details-content::-webkit-scrollbar-thumb:hover {
+    background: var(--pe-scrollbar-hover-bg-color);
+}
+
+.pe-code-details-content::-webkit-scrollbar-corner {
+    background: var(--pe-code-block-bg-color);
+    border-bottom-right-radius: var(--radius);
+}
+
+table.lntable {
+    overflow-x: unset;
+}
+
 .pe-code-block-container pre {
     margin: unset;
 }
-
 
 .pe-code-details .pe-code-details-summary:hover {
     cursor: pointer;
@@ -121,11 +147,12 @@
 }
 
 .pe-code-details.open .pe-code-details-content {
-    max-height: max-content;
+    max-height: 60rem;
     -webkit-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
     -moz-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
     -o-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
     transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+    overflow: auto;
 }
 
 .pe-code-details .fa-chevron-right:before {

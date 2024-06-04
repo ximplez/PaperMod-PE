@@ -16,6 +16,7 @@
     margin: var(--content-gap) auto;
     background-color: var(--pe-code-block-header-bg-color);
     font-family: Consolas, sans-serif;
+    overflow: hidden;
 }
 
 .pe-code-block-header {
@@ -50,13 +51,14 @@
 .post-content .highlight:not(table) {
     margin: unset;
     background: var(--pe-code-block-bg-color) !important;
-    border-radius: 0 0 var(--radius) var(--radius);
+    border-radius: unset;
 }
 
 .post-content pre code {
     background-color: var(--pe-code-block-bg-color) !important;
     font-size: 1.4rem;
     color: var(--pe-code-block-color);
+    border-radius: unset;
 }
 
 .pe-icon {
@@ -88,8 +90,6 @@
 
 .pe-code-details-content::-webkit-scrollbar-track {
     background: var(--pe-code-block-bg-color); /* Background of the scrollbar track */
-    border-bottom-left-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
 }
 
 .pe-code-details-content::-webkit-scrollbar-thumb {
@@ -103,7 +103,6 @@
 
 .pe-code-details-content::-webkit-scrollbar-corner {
     background: var(--pe-code-block-bg-color);
-    border-bottom-right-radius: var(--radius);
 }
 
 table.lntable {

@@ -3,7 +3,7 @@
     border-left: .5rem solid #007bff; /* 左侧蓝色边框，突出重点 */
     color: #333; /* 深色文字，确保对比度 */
     padding: .5rem 1rem; /* 内边距，增加阅读舒适度 */
-    margin-bottom: 1rem; /* 底部外边距，分隔不同内容 */
+    margin: var(--content-gap) 0; /* 顶部&底部外边距，分隔不同内容 */
     border-radius: .5rem; /* 圆角，提升视觉效果 */
 }
 

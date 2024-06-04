@@ -147,7 +147,7 @@ table.lntable {
 }
 
 .pe-code-details.open .pe-code-details-content {
-    max-height: 60rem;
+    max-height: 80vh;
     -webkit-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
     -moz-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
     -o-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;

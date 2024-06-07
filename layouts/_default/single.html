@@ -55,9 +55,13 @@
     {{ $threshold := (.Param "expireTipThreshold" | default 30) }}
     {{ $diff := div (sub now.Unix .Lastmod.Unix) 86400 }}
     {{ if gt $diff $threshold }}
+      {{ $msg := printf "%v%s" $diff " 天前" }}
+      {{ if gt $diff 365 }}
+      {{ $msg = printf "%v%s" (div $diff 365) " 年前" }}
+      {{ end }}
     <div class="pe-tip warning">
       <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>
-      本文最后更新于&nbsp;{{ $diff }}&nbsp;天前，文中信息可能已经过时。如有问题请在评论区留言。
+      本文最后更新于&nbsp;{{ $msg }}&nbsp;，文中信息可能已经过时。如有问题请在评论区留言。
     </div>
     {{ end }}
     {{ end }}

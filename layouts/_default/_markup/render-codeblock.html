@@ -1,4 +1,4 @@
-{{ $defaultFoldMod := .Page.Site.Params.codeBlockFoldMode | default false }}
+{{ $defaultFoldMod := .Page.Param "codeBlockFoldMode" | default false }}
 
 {{- $lang := .Type | default "text" }}
 {{- $title := .Attributes.title | default "" }}

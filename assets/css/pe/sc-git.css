@@ -129,7 +129,7 @@
     margin-top: -.4rem;
     margin-left: -.4rem;
     border-radius: 100%;
-    animation: ball-spin-clockwise 1s infinite ease-in-out;
+    animation: pe-loading-frames 1s infinite ease-in-out;
 }
 
 .pe-loading > div:nth-child(1) {
@@ -216,7 +216,7 @@
     margin-left: -1.2rem;
 }
 
-@keyframes ball-spin-clockwise {
+@keyframes pe-loading-frames {
     0%,
     100% {
         opacity: 1;

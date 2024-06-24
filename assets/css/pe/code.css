@@ -152,6 +152,9 @@ table.lntable {
     -moz-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
     -o-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
     transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+}
+
+.pe-code-details.scrollable .pe-code-details-content{
     overflow: auto;
 }
 

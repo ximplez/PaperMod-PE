@@ -37,7 +37,15 @@ for (let element of peCodeDetails) {
     const peCodeSummary = element.getElementsByClassName('pe-code-details-summary')[0];
     if (peCodeSummary) {
         peCodeSummary.addEventListener('click', () => {
-            element.classList.toggle('open');
+            if (element.classList.contains('open')) {
+                element.classList.remove('open');
+                element.classList.remove('scrollable');
+            } else {
+                element.classList.add('open');
+                setTimeout(() => {
+                    element.classList.add('scrollable');
+                }, 800);
+            }
         }, false);
     }
 }

@@ -104,8 +104,8 @@
     color: #000;
 }
 
-.pe-loading.la-dark {
-    color: #333;
+.dark .pe-loading {
+    color: #fff;
 }
 
 .pe-loading > div {
@@ -116,18 +116,18 @@
 }
 
 .pe-loading {
-    width: 32px;
-    height: 32px;
+    width: 3.2rem;
+    height: 3.2rem;
 }
 
 .pe-loading > div {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 8px;
-    height: 8px;
-    margin-top: -4px;
-    margin-left: -4px;
+    width: .8rem;
+    height: .8rem;
+    margin-top: -.4rem;
+    margin-left: -.4rem;
     border-radius: 100%;
     animation: ball-spin-clockwise 1s infinite ease-in-out;
 }
@@ -139,8 +139,8 @@
 }
 
 .pe-loading > div:nth-child(2) {
-    top: 18.1801948466%;
-    left: 81.8198051534%;
+    top: 18%;
+    left: 81%;
     animation-delay: -0.75s;
 }
 
@@ -151,69 +151,69 @@
 }
 
 .pe-loading > div:nth-child(4) {
-    top: 81.8198051534%;
-    left: 81.8198051534%;
+    top: 81%;
+    left: 81%;
     animation-delay: -0.5s;
 }
 
 .pe-loading > div:nth-child(5) {
-    top: 94.9999999966%;
-    left: 50.0000000005%;
+    top: 94%;
+    left: 50%;
     animation-delay: -0.375s;
 }
 
 .pe-loading > div:nth-child(6) {
-    top: 81.8198046966%;
-    left: 18.1801949248%;
+    top: 81%;
+    left: 18%;
     animation-delay: -0.25s;
 }
 
 .pe-loading > div:nth-child(7) {
-    top: 49.9999750815%;
-    left: 5.0000051215%;
+    top: 49%;
+    left: 5%;
     animation-delay: -0.125s;
 }
 
 .pe-loading > div:nth-child(8) {
-    top: 18.179464974%;
-    left: 18.1803700518%;
+    top: 18%;
+    left: 18%;
     animation-delay: 0s;
 }
 
 .pe-loading.la-sm {
-    width: 16px;
-    height: 16px;
+    width: 1.6rem;
+    height: 1.6rem;
 }
 
 .pe-loading.la-sm > div {
-    width: 4px;
-    height: 4px;
-    margin-top: -2px;
-    margin-left: -2px;
+    width: .4rem;
+    height: .4rem;
+    margin-top: -.2rem;
+    margin-left: -.2rem;
 }
 
 .pe-loading.la-2x {
-    width: 64px;
-    height: 64px;
+    width: 6.4rem;
+    height: 6.4rem;
 }
 
 .pe-loading.la-2x > div {
-    width: 16px;
-    height: 16px;
-    margin-top: -8px;
-    margin-left: -8px;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-top: -.8rem;
+    margin-left: -.8rem;
 }
 
 .pe-loading.la-3x {
-    width: 96px;
-    height: 96px;
+    width: 9.6rem;
+    height: 9.6rem;
 }
 
 .pe-loading.la-3x > div {
-    width: 24px;
-    height: 24px;
-    margin-top: -12px;
-    margin-left: -12px;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-top: -1.2rem;
+    margin-left: -1.2rem;
 }
 
 @keyframes ball-spin-clockwise {

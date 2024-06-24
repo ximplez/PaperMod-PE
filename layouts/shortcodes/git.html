@@ -12,8 +12,20 @@
     {{ $repo = index (index $matches 0) 2 }}
 {{ end }}
 
+
 <div class="pe-git {{ $platform }}">
-    <span class="pe-git-platform"></span>
+    <div class="pe-git-platform">
+        <div class="pe-loading">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <div class="pe-git-info">
         <div class="pe-git-repo-name">
             {{ $repo }}

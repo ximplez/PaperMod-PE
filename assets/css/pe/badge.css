@@ -3,9 +3,9 @@
     align-items: center;
     background-color: #555;
     color: white;
-    border-radius: var(--radius);
+    border-radius: .4rem;
     overflow: hidden;
-    font-size: .8em;
+    font-size: .75em;
     text-align: center;
     margin-right: .5rem;
 }

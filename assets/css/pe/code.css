@@ -85,7 +85,7 @@
 }
 
 .pe-code-details-content::-webkit-scrollbar {
-    width: 1rem;
+    width: .8rem;
 }
 
 .pe-code-details-content::-webkit-scrollbar-track {

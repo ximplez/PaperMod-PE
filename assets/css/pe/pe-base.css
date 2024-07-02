@@ -230,10 +230,6 @@ html {
     margin: 1rem auto !important;
 }
 
-.gist {
-    margin: var(--content-gap) 0;
-}
-
 @media screen and (max-width: 568px) {
     .post-content img {
         max-width: 30rem;

@@ -162,10 +162,6 @@ table.lntable {
     content: "\f105";
 }
 
-.pe-code-details.open .fa-chevron-right:before {
-    content: "\f107";
-}
-
 .pe-code-details .fa-ellipsis-h:before {
     content: "\f141";
 }

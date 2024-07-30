@@ -1,4 +1,4 @@
-<h1 align=center>PaperMod PE | <a href="https://tofuwine.github.io/PaperMod-PE-Demo/" rel="nofollow">Demo</a></h1>
+<h1 align=center>PaperMod PE | <a href="https://www.tofuwine.cn/posts/041e0ff6/" rel="nofollow">Demo</a></h1>
 
 <br>
 

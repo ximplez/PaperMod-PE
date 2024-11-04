@@ -158,6 +158,10 @@ table.lntable {
     overflow: auto;
 }
 
+.scrollable {
+    overflow: auto;
+}
+
 .pe-code-details .fa-chevron-right:before {
     content: "\f105";
 }

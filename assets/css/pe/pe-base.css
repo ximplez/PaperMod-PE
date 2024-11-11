@@ -239,3 +239,10 @@ html {
         max-width: 30rem;
     }
 }
+
+kbd {
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px 1px rgba(30, 35, 90, .4);
+    padding: 2px;
+}

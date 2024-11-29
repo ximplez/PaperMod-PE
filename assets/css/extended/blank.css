@@ -1,3 +1,14 @@
 /*
 This is just a placeholder blank stylesheet so as to support adding custom styles budled with theme's default styles
 */
+/* 文章describe code样式 */
+.post-description code {
+    margin: unset;
+    padding: .3rem .4rem;
+    line-height: 1.5;
+    background: var(--code-bg);
+    border-radius: .5rem;
+    font-size: 0.875em;
+    font-family: Consolas, sans-serif;
+    color: var(--pe-primary-hover-color);
+}

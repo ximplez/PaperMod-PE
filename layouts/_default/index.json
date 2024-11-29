@@ -1,5 +1,5 @@
 {{- $.Scratch.Add "index" slice -}}
-{{- range site.RegularPages -}}
+{{- range where .Site.RegularPages "Type" "not in" (slice "page" "json") -}}
     {{- if and (not .Params.searchHidden) (ne .Layout `archives`) (ne .Layout `search`) (ne .Layout `latest`) }}
     {{- $.Scratch.Add "index" (dict "title" .Title "content" .Plain "permalink" .Permalink "summary" .Summary) -}}
     {{- end }}

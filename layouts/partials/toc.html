@@ -1,8 +1,8 @@
 {{- $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content -}}
 {{- $has_headers := ge (len $headers) 1 -}}
 {{- if $has_headers -}}
-<aside id="toc-container" class="toc-container wide">
-    <div class="toc">
+<div class="toc">
+    <div id="toc-container">
         <details {{ if (.Param "TocOpen") }} open{{ end }}>
         <summary>
             <span class="details">{{- i18n "toc" | default "Table of Contents" }}</span>
@@ -88,7 +88,7 @@
         </div>
         </details>
     </div>
-</aside>
+</div>
 {{- end }}
 
 {{ $script := resources.Get "js/pe-toc.js" | minify | fingerprint}}

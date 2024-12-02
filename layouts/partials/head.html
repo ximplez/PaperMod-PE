@@ -41,7 +41,7 @@
 {{ end }}
 <!-- Cloudflare Web Analytics -->
 {{ if site.Params.analytics.cloudflare.WebAnalyticsToken }}
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ site.Params.analytics.cloudflare.WebAnalyticsToken }}"}'></script>
+<script defer src='https://proxy.ximplez.com/https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ site.Params.analytics.cloudflare.WebAnalyticsToken }}"}'></script>
 {{ end }}
 <!-- End Cloudflare Web Analytics -->
 

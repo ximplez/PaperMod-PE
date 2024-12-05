@@ -355,6 +355,7 @@
     margin: 2rem 0;
     padding: 0 1.4rem;
     border-inline-start: .3rem solid var(--pe-primary-hover-color);
+    color: #878789;
 }
 
 .post-content hr {

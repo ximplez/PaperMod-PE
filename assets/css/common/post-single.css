@@ -1,6 +1,6 @@
 .page-header,
 .post-header {
-    margin: 2.4rem auto var(--content-gap) auto;
+    margin: 2rem auto var(--content-gap) auto;
 }
 
 .post-title {
@@ -16,9 +16,10 @@
 .post-meta,
 .breadcrumbs {
     color: var(--secondary);
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 2rem;
 }
 
 .post-meta .i18n_list li {
@@ -29,7 +30,9 @@
 }
 
 .breadcrumbs a {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    color: #1b51bc;
+    border: 1px;
 }
 
 .post-content {

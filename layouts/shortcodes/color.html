@@ -1,13 +1,15 @@
 {{ $type := .Get 0 | default "" }}
 
 {{ if ($type | eq "info") }}
-    {{ $type = "#6AAB73" }}
+    {{ $type = "#007d11" }}
 {{ else if ($type | eq "tip") }}
-    {{ $type = "#56A8F5" }}
+    {{ $type = "#165ddc" }}
 {{ else if ($type | eq "warning") }}
-    {{ $type = "#E0BB65" }}
+    {{ $type = "#e96725" }}
 {{ else if ($type | eq "debug") }}
     {{ $type = "#299999" }}
+{{ else if ($type | eq "danger") }}
+    {{ $type = "#dc362e" }}
 {{ end }}
 
 <span style="color: {{$type}}">{{ .Inner | .Page.RenderString }}</span>

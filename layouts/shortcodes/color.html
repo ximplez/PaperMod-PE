@@ -1,1 +1,13 @@
-<span style="color: {{.Get 0}}">{{ .Inner | .Page.RenderString }}</span>
+{{ $type := .Get 0 | default "" }}
+
+{{ if ($type | eq "info") }}
+    {{ $type = "#6AAB73" }}
+{{ else if ($type | eq "tip") }}
+    {{ $type = "#56A8F5" }}
+{{ else if ($type | eq "warning") }}
+    {{ $type = "#E0BB65" }}
+{{ else if ($type | eq "debug") }}
+    {{ $type = "#299999" }}
+{{ end }}
+
+<span style="color: {{$type}}">{{ .Inner | .Page.RenderString }}</span>
